@@ -1,0 +1,68 @@
+.titlu_home_ist{
+    display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh; 
+  width: 100%;
+}
+
+.continut_pag {
+  
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background: linear-gradient(145deg, #1a1a1a, #000); /* Gradient subtil */
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8), 0 4px 6px rgba(255, 255, 255, 0.05);
+}
+
+.continut_pag h1 {
+  text-align: center;
+  color: #ff9900; /* Portocaliu vibrant pentru titlu */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 153, 0, 0.8), 0 0 20px rgba(255, 153, 0, 0.5);
+}
+
+.continut_pag h2 {
+  margin-top: 30px;
+  color: #66ccff; /* Albastru deschis */
+  font-size: 1.8rem;
+  border-left: 5px solid #66ccff;
+  padding-left: 10px;
+  text-shadow: 0 0 8px rgba(102, 204, 255, 0.7);
+}
+
+.continut_pag h3 {
+  margin-top: 20px;
+  color: #ffcc00; /* Galben cald */
+  font-size: 1.4rem;
+  text-shadow: 0 0 5px rgba(255, 204, 0, 0.6);
+}
+
+.continut_pag p {
+  margin: 10px 0;
+  color: #bbb; /* Gri deschis */
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.continut_pag p strong {
+  color: #ff9900; /* Evidențiază cu portocaliu vibrant */
+}
+
+.continut_pag section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05); /* Fundal semitransparent pentru secțiuni */
+  border-radius: 10px;
+  border-left: 3px solid #555;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.continut_pag section:hover {
+  transform: scale(1.02); /* Efect subtil la hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}

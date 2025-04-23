@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Evoluția Jocurilor Video</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/carousel.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/istorie.css">
+        <link rel="stylesheet" href="styles/gpt.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto:wght@500;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+
+       
+        <script src="scripts/carousel.js" defer></script>
+        <link rel="stylesheet" href="styles/pacman.css">
+        <script src="scripts/pacman.js" defer></script> <!-- Scriptul pentru PacMan -->
+        <link rel="icon" type="image/png" href="photos/logo.png">
+
+
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" background="photos/2000background.png";>
+            
+            <div id="progressbar"></div>
+            <div id="scrollPath"></div>
+
+            <div class="pacman_container">
+                <img src="photos/XOsf.gif" alt="pacman" id="pacman" class="pacman"> <!-- Imaginea PacMan -->
+            </div>
+
+            <div class="header">
+                <div id="buton_home">
+                   <a href="index.html" style="color: rgb(216, 216, 216);">HOME</a> 
+                </div> 
+
+                <button class="blur-button" id="toggleBlurButton"><img class="imagine_buton_blur" src="photos/blurred.png" alt="button"></button>
+
+
+                <div style="display: flex; align-items: center;">
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="menu">
+                <li><a href="istorie.html" class="lista_dropdown">Istoria jocurilor video</a></li>
+                <li><a href="Anii80.html" class="lista_dropdown">Anii '80</a></li>
+                <li><a href="Anii90.html" class="lista_dropdown">Anii '90</a></li>
+                <li><a href="anii2000.html" class="lista_dropdown">Anii 2000</a></li>
+                <li><a href="Prezent.html" class="lista_dropdown">Prezentul</a></li>
+                <li><a href="viitorul.html" class="lista_dropdown">Viitorul jocurilor video</a></li>
+                <li><a href="concluzie.html" class="lista_dropdown">Concluzia</a></li>
+            </div>       
+
+            
+
+            <div class="continut_pag">
+               <div style="display: flex; justify-content: space-between;">
+                    <img src="photos/wifi-signal.png" alt="wifi" style="height: 40px; transform: rotate(-30deg); " class="fade-opacity">
+                    <h1> Anii 2000 </h1>
+                    <img src="photos/wifi-signal.png" alt="wifi" style="height: 40px; transform: rotate(30deg);" class="fade-opacity">
+                </div> 
+                
+                <section>
+                    <h2 style="font-size: 30px;">Ascensiunea jocurilor Online si Conectivitate globala</h2>
+                    <br>
+                    <p><strong>Anii 2000</strong> au marcat o revoluție în industria jocurilor video, datorită dezvoltării <strong>internetului</strong> și a tehnologiilor de conectivitate globală. Jocurile au devenit o experiență socială, conectând jucători din întreaga lume în timp real.</p>
+                
+                </section>
+                
+                <section class="game-evolution" style="z-index: 0;">
+                    <div class="text-content">
+                        <h2>Evoluția jocurilor online</h2>
+                        <p><strong>Internetului de mare viteză</strong> în anii 2000 a fost factorul cheie care a permis ascensiunea jocurilor online.</p>
+                        <p>Lansarea jocurilor multiplayer online a transformat gamingul, punând accent pe colaborare și competiție. De exemplu : <strong>Counter-Strike 1.6 (2000)</strong>, a devenit un pionier și un reper pentru competițiile <span>esports</span>. Comunitatea sa puternică a dus la organizarea turneelor LAN, care au pus bazele <span>competițiilor esports moderne</span>.</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="photos/cs16.jpg" alt="Counter-Strike 1.6" style="clip-path: ellipse(70% 100% at 70% 50%);">
+                    </div>
+                </section>
+            
+                <section>
+                    <h2>Consolele de generația a șaptea</h2>
+                    <p>
+                        <strong>PlayStation 3</strong> (2006) și <strong>Xbox 360</strong> (2005) au adus grafica HD, funcții multimedia și jocurile online în prim-plan. Introducerea serviciilor precum Xbox Live a transformat consolele în platforme de socializare.
+                    </p>
+                    <div style="display: flex; justify-content:center; margin-left: 20px; margin-right: 20px;">
+                        <img src="photos/ps3xbox260.jpg" alt="playstation3xbox360" class="responsive-img" style="height: 350px;">
+                    </div>
+                </section>
+
+               
+            </div>
+
+            <div class="next-previous">
+                <div class="previous-page-icon"><a href="Anii90.html" class="previous-page-icon-a"><img src="photos/next_icon.png" alt="previous page" class="next_p_img"></a></div>
+                <div class="next-page-icon"><a href="Prezent.html" class="next-page-icon-a"><img src="photos/next_icon.png" alt="next page" class="next_p_img"></a></div>  
+             </div>   
+            
+            <style>
+                .game-evolution {
+                    position: relative;
+                    
+                }
+
+                .text-content {
+                    position: relative;
+                    z-index: 2; 
+                }
+
+                .image-container {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50%; 
+                    height: 100%;
+                    z-index: 1; 
+                    clip-path: ellipse(70% 100% at 70% 50%);
+                }
+
+                .image-container img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; 
+                }
+
+                .image-container::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to left, rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 1)); /* Gradient de estompare */
+                }
+
+            </style>
+
+        <script src="scripts/dropdown_menu_script.js"></script>
+        <script src="scripts/blur_page.js"></script>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script type="text/javascript" src="scripts/scroll.js"></script>
+            
+        
+
+
+    </body>
+</html>

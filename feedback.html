@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Feedback</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/carousel.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/evolutia_jocurilor_video.css">
+ 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto:wght@500;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+        
+        <script src="scripts/carousel.js" defer></script>
+        <link rel="stylesheet" href="styles/pacman.css">
+        <script src="scripts/pacman.js" defer></script> <!-- Scriptul pentru PacMan -->
+        <link rel="icon" type="image/png" href="photos/logo.png">
+
+
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" background="photos/feedback.gif">
+
+            <div id="progressbar"></div>   
+            <div id="scrollPath"></div> 	            
+        
+            <div class="pacman_container">
+            <img src="photos/XOsf.gif" alt="pacman" id="pacman" class="pacman"> <!-- Imaginea PacMan -->
+        </div>
+            
+        <div class="header">
+            <div id="buton_home">
+               <a href="index.html" style="color: rgb(216, 216, 216);">HOME</a> 
+            </div> 
+
+            <!-- <button class="blur-button" id="toggleBlurButton"><img class="imagine_buton_blur" src="photos/blurred.png" alt="button"></button> -->
+
+
+            <div style="display: flex; align-items: center;">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="menu">
+            <li><a href="istorie.html" class="lista_dropdown">Istoria jocurilor video</a></li>
+            <li><a href="Anii80.html" class="lista_dropdown">Anii '80</a></li>
+            <li><a href="Anii90.html" class="lista_dropdown">Anii '90</a></li>
+            <li><a href="anii2000.html" class="lista_dropdown">Anii 2000</a></li>
+            <li><a href="Prezent.html" class="lista_dropdown">Prezentul</a></li>
+            <li><a href="viitorul.html" class="lista_dropdown">Viitorul jocurilor video</a></li>
+            <li><a href="concluzie.html" class="lista_dropdown">Concluzia</a></li>
+        </div>        
+        <div class="continut_pag">
+            
+            <h1 style="text-align: center; margin-bottom: 0;font-size:47px;" >Feedback </h>
+            <div style="height: 45px;">
+                <h1 id="face-icon">&#9786;</h1>
+            </div>
+                <div class="feedback-container">
+                    <div class="stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <textarea placeholder=" Observatii ?    ( Obtional )" style="min-height:155px ;"></textarea>
+                    <button id="buttonfeed" onclick="showMessage()">Trimite feedback</button>
+                </div>
+            
+               
+        </div>
+        
+            
+        
+        <style>
+        .feedback-container {
+            
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 700px;
+            margin: 50px auto;
+        }
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        .star {
+            font-size: 30px;
+            cursor: pointer;
+            color: #888;
+        }
+        .star.selected {
+            color: rgb(255, 166, 0);
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+            font-family: "Pixelify Sans", sans-serif;
+            font-size: medium;
+            background-color: #444;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 5px;
+            max-width: 660px;
+            min-width: 660px;
+            max-height: 380px;
+            border-radius: 6px;
+        }
+        #buttonfeed {
+            background: rgb(144, 127, 0);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-family: "Pixelify Sans", sans-serif;    
+            font-size: large;   
+            border-radius: 7px;
+            transition: 0.2s;
+         }
+         button:hover{
+            opacity: 0.8;
+            transition: 0.2s;
+         }
+         #face-icon {
+            font-size: 55px; 
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;            
+        }
+    </style>
+    
+    
+       
+            <script>
+                const stars = document.querySelectorAll('.star');
+                const faceIcon = document.getElementById('face-icon');
+
+                stars.forEach(star => {
+                    star.addEventListener('click', function() {
+                        let value = this.getAttribute('data-value');
+                        
+                        faceIcon.style.opacity = "1"; 
+
+                        stars.forEach(s => s.classList.remove('selected'));
+                        for (let i = 0; i < value; i++) {
+                            stars[i].classList.add('selected');
+                        }
+
+                        
+                        faceIcon.innerHTML = value <= 2 ? '&#9785;' : '&#9786;';
+                        
+                        if (value <= 2) {
+                            faceIcon.style.fontSize = "45px"; // Poți ajusta valoarea
+                            faceIcon.style.paddingTop = "22px"; 
+                        } else {
+                            faceIcon.style.fontSize = "65px"
+                            faceIcon.style.paddingTop = "0px"; 
+
+                        }
+
+                    });
+                });
+
+                
+             </script>
+
+            <script>
+                function showMessage() {
+                    const messageBox = document.createElement("div");
+                    messageBox.innerText = "✔ Feedback trimis cu succes!";
+                    messageBox.style.position = "fixed";
+                    messageBox.style.top = "50%";
+                    messageBox.style.left = "50%";
+                    messageBox.style.transform = "translate(-50%, -50%)";
+                    messageBox.style.background = "rgba(20, 20, 20, 0.9)"; 
+                    messageBox.style.color = "#ffcc00"; 
+                    messageBox.style.padding = "15px 30px";
+                    messageBox.style.borderRadius = "10px";
+                    messageBox.style.fontSize = "22px";
+                    messageBox.style.textAlign = "center";
+                    messageBox.style.zIndex = "1000";
+                    messageBox.style.opacity = "0";
+                    messageBox.style.transition = "opacity 0.5s ease-in-out";
+                    messageBox.style.fontFamily = "'Pixelify Sans', sans-serif"; 
+                    messageBox.style.textShadow = "0 0 10px #ffcc00"; 
+                    messageBox.style.border = "2px solid #ffcc00"; 
+
+                    document.body.appendChild(messageBox);
+
+                    setTimeout(() => {
+                        messageBox.style.opacity = "1";
+                    }, 50);
+
+                    setTimeout(() => {
+                        messageBox.style.opacity = "0";
+                        setTimeout(() => {
+                            messageBox.remove();
+                        }, 500);
+                    }, 2000);
+                }
+            </script>
+
+
+            
+
+        <div class="next-previous">
+            <div class="previous-page-icon"><a href="concluzie.html" class="previous-page-icon-a"><img src="photos/next_icon.png" alt="previous page" class="next_p_img"></a></div>
+            <div class="next-page-icon"><a href="concluzie.html" class="next-page-icon-a"><img src="photos/next_icon.png" alt="next page" class="next_p_img"></a></div>  
+         </div>  
+
+        <script src="scripts/dropdown_menu_script.js"></script>
+        <!-- <script src="scripts/blur_page.js"></script> -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <!-- <script type="tsext/javascript" src="scripts/scroll.js"></script> -->
+
+    </body>
+</html>

@@ -1,0 +1,606 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   list-style: none;
+   text-decoration: none;
+   color: rgb(255, 255, 255);
+   
+}
+#home{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+
+a{
+  text-decoration: none; color: inherit;
+}
+body {
+    margin: 0;
+   font-family: "Pixelify Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    height: 100%;
+    padding-top: 4rem;
+    
+        
+  }
+
+  body.blur-background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(8px); 
+    /* filter: grayscale(100%); */
+    z-index: -1;
+  }
+  .blur-button { 
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Position at the vertical center */
+    left: 50%; /* Position at the horizontal center */
+    transform: translate(-50%, -50%);
+    
+    
+  }
+  .imagine_buton_blur{
+    height: 85px;
+    filter: invert(20%);
+  }
+
+  html{
+   height: 100%;
+  }
+
+ .fontpixelat {
+   font-family: "Pixelify Sans", serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
+ }
+
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    background: rgba(175, 175, 175, 0.04);
+    backdrop-filter: blur(15px);
+
+ }
+
+ #buton_home {
+    width: 15%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+ }
+
+ .titlu_home {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px; 
+  width: 100%;
+}
+#info_sub_titlu{
+  display: block;
+  text-align: center;
+  max-width: 100vh;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 40px;
+}
+
+
+/* HAMBURGER MENU / dropdown one idk*/
+
+.hamburger{
+  display: block;
+  cursor: pointer;
+  transition: 500ms;
+  padding-right: 3rem;
+
+}
+
+
+.hamburger:hover{
+  opacity: 0.5;
+}
+
+.bar{
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition:all 0.3s ease-in-out;
+  background-color: rgb(199, 199, 199);
+  border-radius: 2px;
+  
+}
+
+.menu{
+  background: rgba(105, 105, 105, 0.01);
+  backdrop-filter: blur(15px);
+  padding-top: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  color:  rgb(0, 0, 0);
+  margin-top: 4rem;
+  top: -100%;
+  gap: 0;
+  flex-direction: column;
+  transition: 0.5s;
+  z-index: 1;
+  
+  
+
+}
+
+.menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.hamburger.active .bar:nth-child(2){
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1){
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3){
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+.menu.active{
+ top: 0;
+ 
+}
+
+/* Basic styles for links */
+.lista_dropdown{
+  position: relative;
+  display: inline-block;
+  text-decoration: none; /* Remove default underline */
+  color: rgb(255, 255, 255); /* Text color */
+  padding-bottom: 2px; /* Add padding to create space for the underline */
+}
+
+/* Create a custom underline with ::after */
+.lista_dropdown::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: rgb(0, 0, 0); /* Color of the underline */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+
+/* Make underline appear on hover */
+.lista_dropdown:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+/* Optional: Add some space between text and underline */
+a {
+  padding-bottom: 4px; /* Adjust the padding to your preference */
+}
+
+
+
+
+
+
+/* NEXT _ PREVIOUS BUTTON <-> */
+
+
+.next-previous{
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Adăugat pentru alinierea verticală */
+  margin-left: 5vh;
+  margin-right: 5vh;
+  padding-bottom: 3vh;
+}
+
+.next-page-icon, .previous-page-icon {
+  justify-content: space-between; /* Acest lucru va face ca elementele să ocupe spațiu egal */
+  display: flex;
+  justify-content: center; /* Centrat pe orizontală */
+}
+
+.next-page-icon-a, .previous-page-icon-a {
+  background-color: rgba(0, 0, 0, 0.596);
+  border-style: dotted;
+  border-color: rgb(66, 66, 66);
+  border-radius: 50%;
+  transition: 300ms ease;
+  display: flex; /* Adăugat pentru a centra imaginea în interiorul linkului */
+  justify-content: center; /* Centrat pe orizontală */
+  align-items: center; /* Centrat pe verticală */
+  padding: 10px; /* Adăugat pentru a asigura un spațiu corespunzător în jurul imaginii */
+}
+
+.next-page-icon-a:hover, .previous-page-icon-a:hover {
+  background-color: rgba(22, 0, 0, 0.842);
+  box-shadow: 0 0 5px rgba(22, 0, 0, 0.842),
+              0 0 20px rgba(22, 0, 0, 0.842),
+              0 0 60px rgba(22, 0, 0, 0.842),
+              0 0 150px rgba(22, 0, 0, 0.842);
+}
+
+.previous-page-icon-a {
+  transform: scaleX(-1);
+}
+
+.next_p_img {
+  width: 80px; /* Sau orice dimensiune doriți pentru imagine */
+  height: 80px; /* Sau orice dimensiune doriți pentru imagine */
+}
+
+/* ----------------------------------------------------- */
+/* TITLU NEON GLOW 80' */
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 8px #ff8c00, 0 0 16px #ff8c00, 0 0 24px #ff4500, 0 0 32px #ff0000;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 6px #ff8c00, 0 0 12px #ff4500, 0 0 18px #ff6347, 0 0 24px #ff0000;
+    opacity: 0.9;
+  }
+  100% {
+    text-shadow: 0 0 4px #ff4500, 0 0 8px #ff0000, 0 0 12px #8b0000, 0 0 16px #800000;
+    opacity: 0.8;
+  }
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.7;
+  }
+}
+
+.neon-title {
+ 
+  color: #ff8c00; /* Galben-portocaliu principal */
+  text-align: center;
+  text-shadow: 0 0 8px #ff8c00, 0 0 16px #ff8c00, 0 0 24px #ff4500, 0 0 32px #ff0000;
+  animation: neon-glow 2s infinite alternate, flicker 4s infinite;
+}
+
+/* text pixelat glitch */
+.pixel-text {
+  color: #f7d51d; /* Galben retro */
+  text-shadow: 
+    0 0 5px #f7d51d,
+    0 0 10px #f7d51d,
+    0 0 20px #ffae00,
+    0 0 30px #ffae00;
+  animation: pixel 2.5s infinite steps(20, start);
+}
+
+@keyframes pixel {
+  0% {
+    text-shadow: 
+      0 0 5px #f7d51d,
+      0 0 10px #f7d51d,
+      0 0 20px #ffae00,
+      0 0 30px #ffae00;
+    color: #f7d51d;
+  }
+  20% {
+    text-shadow: 
+      0 0 2px #f7d51d,
+      0 0 8px #f7d51d,
+      0 0 15px #ff4f00,
+      0 0 25px #ff4f00;
+    color: #ff4f00;
+  }
+  40% {
+    text-shadow: none;
+    color: transparent;
+  }
+  60% {
+    text-shadow: 
+      0 0 5px #f7d51d,
+      0 0 12px #f7d51d,
+      0 0 18px #00ffd5,
+      0 0 25px #00ffd5;
+    color: #00ffd5;
+  }
+  80% {
+    text-shadow: 
+      0 0 3px #f7d51d,
+      0 0 7px #f7d51d,
+      0 0 10px #ff4f00,
+      0 0 20px #ff4f00;
+    color: #ff4f00;
+  }
+  100% {
+    text-shadow: 
+      0 0 5px #f7d51d,
+      0 0 10px #f7d51d,
+      0 0 20px #ffae00,
+      0 0 30px #ffae00;
+    color: #f7d51d;
+  }
+}
+
+/* --------------------------------------------------------------- */
+.tab{
+  margin-left: 20px;
+}
+/* -------BUTON PONG-------------------------------------------------------- */
+.buton_pong{
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  margin: 50px;
+  padding: 15px 40px;
+  border: none;
+  font-family: "Pixelify Sans", serif;
+  outline: none;
+  background-color: #262626; 
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border: none;
+  border-radius: 12px;
+}
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* glow */
+.btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* hover */
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:is(:active, :focus):after{
+  background: transparent;
+}
+
+.btn:active {
+  color: #000;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------------Paralax background */
+.background_paralax {
+  background-image: url('imagine_ta.png');
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* -------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+.body_glitch{ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.h1_glitch{
+  animation: glitch 2s linear infinite;
+}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+.h1_glitch:before,
+.h1_glitch:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.h1_glitch:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.h1_glitch:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+
+/* ----------------------------------------------------text 3d */
+.Text_3d{
+  color: #ff9900;
+  font-weight:bold;
+  font-size:40px;
+  text-shadow: 0px 0px 0 rgb(231,129,-24),1px 1px 0 rgb(216,114,-39),2px 2px 0 rgb(202,100,-53),3px 3px 0 rgb(187,85,-68),4px 4px 0 rgb(173,71,-82),5px 5px 0 rgb(158,56,-97), 6px 6px 0 rgb(144,42,-111),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+}
+
+/* ----------------------------------------------fancy  scroll bar  */
+::-webkit-scrollbar{
+  width: 0;
+}
+#scrollPath{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background-color: transparent;
+}
+#progressbar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  background:linear-gradient(to top , #008aff , #00ffe7);
+  animation: animate 5s linear infinite;
+  border-radius: 10px;
+}
+@keyframes animate{
+  0%,100%{
+    filter: hue-rotate(0deg);
+  }
+  50%{
+    filter: hue-rotate(360deg);
+  }
+}
+#progressbar:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(to top , #008aff,#00ffe7);
+  filter: blur(30px);
+}
+#progressbar:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(to top , #008aff,#00ffe7);
+  filter: blur(30px);
+}
+/* -------------------------------------------------------------------------------------------wifi icon */
+
+.fade-in-image {
+  opacity: 0; /* Start: imagine complet invizibilă */
+  animation: fadeIn 3s ease-in-out forwards; /* Animație de fade-in */
+}
+
+/* Definirea animației */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-opacity {
+
+  opacity: 0;
+  mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  animation: fadeInFromBottom 5s ease-in-out forwards;
+}
+
+/* Animație de fade-in */
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    mask-image: linear-gradient(to top, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  }
+  
+  100% {
+    opacity: 1;
+    /* mask-image: linear-gradient(to top, transparent 0%, black 100%);mask-image: none; */
+    /* -webkit-mask-image: linear-gradient(to top, transparent 0%, black 100%);-webkit-mask-image: none; */
+  }
+}

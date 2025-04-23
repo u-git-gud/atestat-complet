@@ -1,0 +1,87 @@
+.card{
+    width: 40vh;
+    object-fit: cover;
+    border-radius: 50% ;
+    
+    
+}
+
+.carousel_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 35px;
+    margin-top: 10vh;
+    
+
+}
+/* .card:hover{
+    background-color: rgba(0, 0, 0, 0.842);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.842),
+                0 0 10px rgba(0, 0, 0, 0.842),
+                0 0 50px rgba(0, 0, 0, 0.842),
+                0 0 130px rgba(0, 0, 0, 0.842);
+} */
+.carousel .card{
+    height: 35vh;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    display: flex;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.carousel.dragging {
+    cursor: grab;
+    user-select: none;
+}
+.wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 2vh);
+    gap: 16px;
+    overflow: hidden;
+}
+.wrapper{
+    max-width: 145vh;
+    width: 100%;
+}
+@media screen and (max-width: 130vh) {
+    .wrapper .carousel{
+        grid-auto-columns: calc((100% / 2) - 1.5vh);
+    }
+   
+    
+}
+@media screen and (max-width: 70vh) {
+    .wrapper .carousel{
+        grid-auto-columns: 100%;
+
+    }
+    
+}
+
+
+.link_carousel{
+    position: relative;
+    display: inline-block;
+    text-decoration: none; /* Remove default underline */
+    color: rgb(255, 255, 255); /* Text color */
+    padding-bottom: 2px; /* Add padding to create space for the underline */
+}
+.link_carousel::after{
+    content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: rgb(255, 255, 255); /* Color of the underline */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+.link_carousel:hover:after{
+    width: 100%; /* Full width on hover */
+}
